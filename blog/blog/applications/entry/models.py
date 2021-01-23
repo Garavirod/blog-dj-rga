@@ -3,8 +3,9 @@ from django.conf import settings
 """ third party app """
 from model_utils.models import TimeStampedModel
 from ckeditor_uploader.fields import RichTextUploadingField
+# Managers
+from .managers import EntryManager
 
-# Create your models here.
 class Category(TimeStampedModel):
     short_name = models.CharField(
         'Short Name', 
@@ -14,7 +15,7 @@ class Category(TimeStampedModel):
 
     name = models.CharField(
         'Name',
-        max_length=30
+        max_length=80
     )
 
     class Meta:
@@ -70,7 +71,8 @@ class Entry(TimeStampedModel):
         editable=False,
         max_length=300
     )
-
+    """ Manager connection """
+    objects = EntryManager()
     class Meta:
         verbose_name = 'Entry'
         verbose_name_plural = 'Entries'

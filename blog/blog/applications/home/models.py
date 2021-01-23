@@ -1,7 +1,7 @@
 from django.db import models
 """ third party app """
 from model_utils.models import TimeStampedModel #Created and updated atr models
-# Create your models here.
+
 
 class Home(TimeStampedModel):
     """ Models for Main page """
