@@ -17,5 +17,9 @@ class HomePageView(TemplateView):
         context = super(HomePageView,self).get_context_data(**kwargs)
         """ Cover page context """
         context["coverPage"] = Entry.objects.entry_on_coverPage() 
+        """ Cover page articles context"""
+        context["articles"] = Entry.objects.entry_articles()
+        """ Recent articles context """
+        context["recentArticles"] = Entry.objects.entry_recent_articles()
         return context
     
