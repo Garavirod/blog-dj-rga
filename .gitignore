@@ -1,0 +1,4 @@
+# git ignore
+blog/blog/secret.json
+#
+blog/blog/applications/users/migrations/*
