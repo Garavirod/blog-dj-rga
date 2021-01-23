@@ -30,6 +30,21 @@ MEDIA_ROOT = BASE_DIR.child('media')
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = 'pillow' #for threat images
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar':'Custom',
+        'toolbar_Custom':[
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
+             'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl',
+             'Language'],
+             ['Format', 'Font', 'FontSize','TextColor'],
+             ['Smiley','Image','Iframe'],
+             ['RemoveFormat','Source']
+        ],
+        'stylesSet':[]
+    }
+}
 
 # EMAIL SETTINGS
 # EMAIL_USE_TLS = True
