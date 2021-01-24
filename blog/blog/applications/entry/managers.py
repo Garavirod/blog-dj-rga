@@ -20,3 +20,17 @@ class EntryManager(models.Manager):
         return self.filter(
             public=True,
         ).order_by('-created')[:6]
+
+    def SearchEntry(self, keyword,category):
+        """ Search an entry based on category or keyword """
+        if len(category) > 0:
+            return self.filter(
+                category__short_name=category, #FK
+                title__icontains=keyword,
+                public=True
+            ).order_by('-created')
+        else:
+            return self.filter(
+                title__icontains=keyword,
+                public=True,
+            ).order_by('-created')
