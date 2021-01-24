@@ -10,4 +10,9 @@ urlpatterns = [
         views.HomePageView.as_view(),
         name='index',
     ),  
+    path(
+        'register-subscriptor', #to access by url
+        views.SubscriptorCreateView.as_view(),
+        name='add-subscriptor',
+    ), 
 ]
