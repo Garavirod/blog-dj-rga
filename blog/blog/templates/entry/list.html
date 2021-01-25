@@ -33,6 +33,9 @@
                             </div>
                         </div>
                     </div>
+                    {% comment %} Empty is going to render if for-object doesn't exist {% endcomment %}
+                    {% empty %}
+                    <h3 style="color:red;" >No results</h3>
                 {% endfor %}
             </div>
             <!-- FIN bloque de resultados de busqueda -->

@@ -8,7 +8,7 @@ from .models import Entry, Category
 class EntryListView(ListView):
     template_name = "entry/list.html"
     context_object_name = 'entries'
-    pagination_by = 10
+    paginate_by = 2
 
     """ for send a context into any view based on class @override get_context_data """
     def get_context_data(self, **kwargs):
