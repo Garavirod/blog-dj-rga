@@ -14,7 +14,7 @@
             <div class="card" style="width: 100%;">
                 <img src="{{coverPage.image.url}}">
                 <div class="card-section">
-                  <h4>{{coverPage.title}}</h4>
+                  <h4> <a href="{% url 'entry_app:DetailEntry' coverPage.id %}"> {{coverPage.title}} </a></h4>
                   <p>{{coverPage.brief | truncatechars:80}}</p>
                 </div>
             </div>

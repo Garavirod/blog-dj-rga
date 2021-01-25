@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import (
-    ListView
+    ListView, DetailView
 )
 """ Models """
 from .models import Entry, Category
@@ -25,3 +25,6 @@ class EntryListView(ListView):
         result = Entry.objects.SearchEntry(keyword,category)
         return result
     
+class EntryDetailView(DetailView):
+    model = Entry
+    template_name = "entry/detail.html"
