@@ -15,4 +15,9 @@ urlpatterns = [
         views.SubscriptorCreateView.as_view(),
         name='add-subscriptor',
     ), 
+    path(
+        'contact-form', #to access by url
+        views.ContactCreateView.as_view(),
+        name='ContactForm',
+    ), 
 ]

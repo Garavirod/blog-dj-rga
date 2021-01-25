@@ -8,7 +8,7 @@ from django.urls import reverse_lazy, reverse
 from applications.entry.models import Entry
 from .models import Home
 """ FormsModel """
-from .forms import SubscriptorForm
+from .forms import SubscriptorForm, ContactForm
 from django.views.generic import (
     TemplateView,
     CreateView
@@ -33,5 +33,11 @@ class HomePageView(TemplateView):
 class SubscriptorCreateView(CreateView):
     """ FromModel linked """
     form_class = SubscriptorForm
+    """ URL in case register were success """
+    success_url = '.' # '.' Same page
+
+class ContactCreateView(CreateView):
+    """ FromModel linked """
+    form_class = ContactForm
     """ URL in case register were success """
     success_url = '.' # '.' Same page
