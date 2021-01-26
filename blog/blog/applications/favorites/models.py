@@ -4,6 +4,8 @@ from django.conf import settings
 from model_utils.models import TimeStampedModel
 """ Models """
 from applications.entry.models import Entry
+""" Managers """
+from .managers import FavoritesManager
 # Create your models here.
 
 class Favorites(TimeStampedModel):
@@ -18,6 +20,9 @@ class Favorites(TimeStampedModel):
         related_name='entry_favorites',
         on_delete=models.CASCADE
     )
+
+    """ Managers connection """
+    objects = FavoritesManager()
 
     """ For avoiduing register twice on BDD """
 
