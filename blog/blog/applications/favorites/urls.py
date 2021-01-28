@@ -7,5 +7,15 @@ urlpatterns = [
         'profile',
         views.UserPageListView.as_view(),
         name='ProfilePage'
+    ),
+    path(
+        'add-entry/<pk>/',
+        views.AddFavoritesViews.as_view(),
+        name='AddFavorite'
+    ),
+    path(
+        'delete-favorite/<pk>/',
+        views.DeleteFavoriteView.as_view(),
+        name='DeleteFavorite'
     )
 ]

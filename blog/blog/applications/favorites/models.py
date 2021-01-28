@@ -28,8 +28,8 @@ class Favorites(TimeStampedModel):
 
     class Meta:
         unique_together = ('user','entry')
-        verbose_name = 'Fsvorite entry'
-        verbose_name_plural = 'Favorite entries'
+        verbose_name = 'Favorites entry'
+        verbose_name_plural = 'Favorites entries'
 
     def __str__(self):
         return self.entry.title
