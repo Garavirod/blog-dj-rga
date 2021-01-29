@@ -1,7 +1,10 @@
 <!-- head para PC -->
 {% extends "home/base_home.html" %}
 {% load  static %}
-
+{% block title %} {{home.title}} {% endblock title %}
+{% block description %} 
+    <meta name="description" content="{{home.description}}">
+{% endblock description %}
 {% block content %}
 
 {% include "includes/header.html" %}
