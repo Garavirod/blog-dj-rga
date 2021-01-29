@@ -1,5 +1,9 @@
+""" STANDARD LIBRARIES """
+from datetime import  timedelta,datetime
 from django.db import models
 from django.conf import settings
+""" django """
+from django.template.defaultfilters import slugify
 """ third party app """
 from model_utils.models import TimeStampedModel
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -79,3 +83,19 @@ class Entry(TimeStampedModel):
     
     def __str__(self):
         return self.title
+
+    def save(self,*arga, **kwargs):
+        now = datetime.now()
+        total_time = timedelta(
+            hours = now.hour,
+            minutes = now.minute,
+            seconds = now.second
+        )
+
+        seconds = int(total_time.total_seconds())
+        """ Genereater a slug based on titile """
+        slug_unique = '%s %s' % (self.title,str(seconds))
+        self.slug = slugify(slug_unique)
+
+        """ For overriding save method """
+        super(Entry,self).save(**args, **kwargs)
