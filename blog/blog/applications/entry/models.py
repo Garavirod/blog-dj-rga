@@ -84,7 +84,7 @@ class Entry(TimeStampedModel):
     def __str__(self):
         return self.title
 
-    def save(self,*arga, **kwargs):
+    def save(self,*args, **kwargs):
         now = datetime.now()
         total_time = timedelta(
             hours = now.hour,
@@ -98,4 +98,4 @@ class Entry(TimeStampedModel):
         self.slug = slugify(slug_unique)
 
         """ For overriding save method """
-        super(Entry,self).save(**args, **kwargs)
+        super(Entry,self).save(*args, **kwargs)

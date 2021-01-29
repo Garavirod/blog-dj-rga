@@ -14,7 +14,7 @@
             <div class="card" style="width: 100%;">
                 <img src="{{coverPage.image.url}}">
                 <div class="card-section">
-                  <h4> <a href="{% url 'entry_app:DetailEntry' coverPage.id %}"> {{coverPage.title}} </a></h4>
+                  <h4> <a href="{% url 'entry_app:DetailEntry' coverPage.slug %}"> {{coverPage.title}} </a></h4>
                   <p>{{coverPage.brief | truncatechars:80}}</p>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="card" style="width: 100%;">
                     <img src="{{entry.image.url}}" style="max-height: 120px;">
                     <div class="card-section">
-                      <h5> <a href="{% url 'entry_app:DetailEntry' entry.id %}">{{entry.title | truncatechars:40}}</a></h5>
+                      <h5> <a href="{% url 'entry_app:DetailEntry' entry.slug %}">{{entry.title | truncatechars:40}}</a></h5>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                 <div class="card" style="width: 100%;">
                     <img src="{{entry.image.url}}">
                     <div class="card-section">
-                    <h4><a href="{% url 'entry_app:DetailEntry' entry.id %}">{{entry.title | truncatechars:40}}</a></h4>
+                    <h4><a href="{% url 'entry_app:DetailEntry' entry.slug %}">{{entry.title | truncatechars:40}}</a></h4>
                     <p>{{entry.brief | truncatechars:80}}</p>
                     </div>
                 </div>

@@ -10,7 +10,7 @@ urlpatterns = [
         name='EntriesList'
     ),
     path(
-        'detail-entry/<pk>/',
+        'detail-entry/<slug>/', #search data in model based on its slug filed 
         views.EntryDetailView.as_view(),
         name='DetailEntry'
     ),
