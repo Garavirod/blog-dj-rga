@@ -4,6 +4,7 @@ from django.db import models
 from django.conf import settings
 """ django """
 from django.template.defaultfilters import slugify
+from django.urls import reverse_lazy
 """ third party app """
 from model_utils.models import TimeStampedModel
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -80,6 +81,16 @@ class Entry(TimeStampedModel):
     class Meta:
         verbose_name = 'Entry'
         verbose_name_plural = 'Entries'
+
+    """ override """
+    def get_absolute_url(self):
+        return reverse_lazy(
+            'entry_app:DetailEntry',
+            kwargs={
+                'slug': self.slug
+            }
+        )
+    
     
     def __str__(self):
         return self.title

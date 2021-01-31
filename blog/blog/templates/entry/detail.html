@@ -1,6 +1,19 @@
 <!-- head para PC -->
 {% extends "entry/base_entry.html" %}
 {% load  static %}
+{% block title %} {{entry.brief}} {% endblock title %}
+
+{% block description %} 
+    <meta name="description" content="{{entry.brief}}">
+{% endblock description %}
+
+{% block tags %} 
+    <meta name="keywords" content="
+        {% for t in entry.tag.all  %}
+            {{ t.name }},
+        {% endfor %}
+    ">
+{% endblock tags %}
 
 {% block content %}
 
